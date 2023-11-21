@@ -1,0 +1,17 @@
+pipeline {
+agent any
+
+stages {
+  stages ('build with version'){
+    steps {
+        sh 'java --version'
+        sh 'ls'
+       }
+     }
+  stages ('deploy'){
+    steps {
+        sh 'aws s3 cp demo.html s3://my-s3-buc-07
+       }
+     }
+  }
+}
